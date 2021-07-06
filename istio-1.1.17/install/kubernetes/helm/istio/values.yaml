@@ -63,7 +63,7 @@ nodeagent:
 # addon grafana configuration
 #
 grafana:
-  enabled: false
+  enabled: true
 
 #
 # addon prometheus configuration
@@ -81,13 +81,13 @@ servicegraph:
 # addon jaeger tracing configuration
 #
 tracing:
-  enabled: false
+  enabled: true
 
 #
 # addon kiali tracing configuration
 #
 kiali:
-  enabled: false
+  enabled: true
 
 #
 # Istio CNI plugin enabled
@@ -158,7 +158,7 @@ global:
     # Options:
     #   "" - disables access log
     #   "/dev/stdout" - enables access log
-    accessLogFile: ""
+    accessLogFile: "/dev/stdout"
 
     # Configure how and what fields are displayed in sidecar access log. Setting to
     # empty string will result in default log format
@@ -258,7 +258,7 @@ global:
   # disablePolicyChecks disables mixer policy checks.
   # if mixer.policy.enabled==true then disablePolicyChecks has affect.
   # Will set the value with same name in istio config map - pilot needs to be restarted to take effect.
-  disablePolicyChecks: true
+  disablePolicyChecks: false
 
   # policyCheckFailOpen allows traffic in cases when the mixer policy service cannot be reached.
   # Default is false which means the traffic is denied when the client is unable to connect to Mixer.
